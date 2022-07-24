@@ -36,14 +36,9 @@ public class NewsAPIController {
     @GetMapping("/email")
     public Object mailll(NewsTable news) throws MessagingException {
         APIResponse res = new APIResponse();
-//        List<String> email = userRepository.findEmailByUserType();
         try {
-//            for (int i = 0; i < email.size(); i++) {
                 smtpMailSenders.send("rujipas1534@gmail.com", "Hello mail", "Hello-Mail");
             System.out.print("Success");
-
-//            }
-//            newsRepository.save(news);
             res.setStatus(1);
             res.setMessage("Success");
             res.setData(news);
